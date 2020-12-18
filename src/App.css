@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+.App {
+  text-align: center;
+}
+
+body {
+  background: linear-gradient(89deg, rgb(144, 69, 187), rgba(18, 167, 187, 0.842) );
+  /* font-family: 'Roboto', sans-serif; */
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+}
