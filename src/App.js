@@ -19,13 +19,37 @@ class App extends Component {
     this.state = {
       input: '',
       imageUrl: '',
-      box: {},
+      boxes: [],
     }
   }
 
-  calculateFaceLocation = (data) => {
-    response.outputs[0].data.regions[0].region_info.bounding_box
+  generateFaceLocation = (data) => {
+    console.log(data)
+    const clarifaiFaces = data.outputs[0].data.regions.map(ele => {
+      return (this.calculateFaceBox(ele.region_info.bounding_box))
+      
+    })
+    // console.log(clarifaiFaces)
+    return clarifaiFaces
   } 
+
+  calculateFaceBox = (box) => {
+    const image = document.getElementById('inputImage')
+    const width = Number(image.width)
+    const height = Number(image.height)
+    
+      return {
+        leftCol: box.left_col * width,
+        topRow: box.top_row * height,
+        rightCol: width - (box.right_col * width),
+        bottomRow: height - (box.bottom_row * height)
+      }
+  }
+
+  displayFaceBoxes = (boxes) => {
+    this.setState({boxes: boxes}) //set state with one or more boxes
+    console.log(this.state)
+  }
 
   onInputChange = (event) => {
     this.setState({ input: event.target.value})  // runs this function on each change of the input
@@ -33,10 +57,10 @@ class App extends Component {
 
   onBtnSubmit = () => {
     this.setState({imageUrl: this.state.input})
-    console.log(this.state)
+    // console.log(this.state)
   
     app.models.predict(Clarifai.FACE_DETECT_MODEL, this.state.input)
-      .then(response => this.calculateFaceLocation(response)
+      .then(response => this.displayFaceBoxes(this.generateFaceLocation(response))
       .catch(err => console.log(err))
     );
     
@@ -51,7 +75,7 @@ class App extends Component {
         <Logo />
         <Rank />
         <ImageInputForm onInputChange={this.onInputChange} onBtnSubmit={this.onBtnSubmit}/>
-        <FaceRecognition imageUrl={this.state.imageUrl}/>
+        <FaceRecognition boxes={this.state.boxes} imageUrl={this.state.imageUrl}/>
       
 
       </div>
