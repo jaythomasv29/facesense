@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/facesense/static/css/main.2b6f05c6.chunk.css",
-    "main.js": "/facesense/static/js/main.67cc3f6c.chunk.js",
-    "main.js.map": "/facesense/static/js/main.67cc3f6c.chunk.js.map",
+    "main.js": "/facesense/static/js/main.d73a1dd4.chunk.js",
+    "main.js.map": "/facesense/static/js/main.d73a1dd4.chunk.js.map",
     "runtime-main.js": "/facesense/static/js/runtime-main.f19c79ee.js",
     "runtime-main.js.map": "/facesense/static/js/runtime-main.f19c79ee.js.map",
     "static/css/2.31461e4f.chunk.css": "/facesense/static/css/2.31461e4f.chunk.css",
@@ -21,6 +21,6 @@
     "static/css/2.31461e4f.chunk.css",
     "static/js/2.09ebc1c5.chunk.js",
     "static/css/main.2b6f05c6.chunk.css",
-    "static/js/main.67cc3f6c.chunk.js"
+    "static/js/main.d73a1dd4.chunk.js"
   ]
 }
