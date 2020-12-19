@@ -37,7 +37,6 @@ class App extends Component {
     const image = document.getElementById('inputImage')
     const width = Number(image.width)
     const height = Number(image.height)
-    
       return {
         leftCol: box.left_col * width,
         topRow: box.top_row * height,
