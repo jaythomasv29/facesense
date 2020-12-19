@@ -3,7 +3,7 @@ import React from 'react'
 const ImageInputForm = ({ onInputChange, onBtnSubmit}) => {
   return (
     <div>
-      <div className="shadow-5 pa4 grow w-70" style={{marginRight: "auto", marginLeft: "auto"}}>
+      <div className="shadow-5 pa4  w-70" style={{marginRight: "auto", marginLeft: "auto"}}>
         <p className="f3 white">
           {"Facesense detects faces in your pictures. Feel free to try!"}
         </p>
