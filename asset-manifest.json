@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/facesense/static/css/main.03f7af04.chunk.css",
-    "main.js": "/facesense/static/js/main.486f714d.chunk.js",
-    "main.js.map": "/facesense/static/js/main.486f714d.chunk.js.map",
+    "main.css": "/facesense/static/css/main.2b6f05c6.chunk.css",
+    "main.js": "/facesense/static/js/main.67cc3f6c.chunk.js",
+    "main.js.map": "/facesense/static/js/main.67cc3f6c.chunk.js.map",
     "runtime-main.js": "/facesense/static/js/runtime-main.f19c79ee.js",
     "runtime-main.js.map": "/facesense/static/js/runtime-main.f19c79ee.js.map",
     "static/css/2.31461e4f.chunk.css": "/facesense/static/css/2.31461e4f.chunk.css",
@@ -12,7 +12,7 @@
     "static/js/3.023efcc0.chunk.js.map": "/facesense/static/js/3.023efcc0.chunk.js.map",
     "index.html": "/facesense/index.html",
     "static/css/2.31461e4f.chunk.css.map": "/facesense/static/css/2.31461e4f.chunk.css.map",
-    "static/css/main.03f7af04.chunk.css.map": "/facesense/static/css/main.03f7af04.chunk.css.map",
+    "static/css/main.2b6f05c6.chunk.css.map": "/facesense/static/css/main.2b6f05c6.chunk.css.map",
     "static/js/2.09ebc1c5.chunk.js.LICENSE.txt": "/facesense/static/js/2.09ebc1c5.chunk.js.LICENSE.txt",
     "static/media/facesenselogo.30baf14e.png": "/facesense/static/media/facesenselogo.30baf14e.png"
   },
@@ -20,7 +20,7 @@
     "static/js/runtime-main.f19c79ee.js",
     "static/css/2.31461e4f.chunk.css",
     "static/js/2.09ebc1c5.chunk.js",
-    "static/css/main.03f7af04.chunk.css",
-    "static/js/main.486f714d.chunk.js"
+    "static/css/main.2b6f05c6.chunk.css",
+    "static/js/main.67cc3f6c.chunk.js"
   ]
 }
