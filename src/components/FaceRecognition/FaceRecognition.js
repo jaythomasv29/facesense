@@ -1,23 +1,21 @@
 import './FaceRecognition.css'
 
 const FaceRecognition = ({imageUrl, boxes}) => {
-
+console.log(boxes)
   return (
     <div className="centered">
     
-    <div className="absolute mt2">
-    {boxes.length > 0  &&
-       <p className="white">Total Faces: {boxes.length}</p>
-      }
+    <div className="absolute mt0">
       
       <img src={imageUrl} id="inputImage" alt="" width="400px" height="auto"/> 
-      {boxes.map(box => {
-        return <div className="bounding-box" style={{top: box.topRow, right: box.rightCol, bottom: box.bottomRow, left: box.leftCol}}></div>
+      {boxes.map((box, idx) => {
+        return <div className="bounding-box" style={{top: box.topRow, right: box.rightCol, bottom: box.bottomRow, left: box.leftCol}}>
+        <span className="white b">{idx + 1}</span></div>
       })
       }
-     
 
     </div>
+ 
     </div>
   )
 }

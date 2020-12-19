@@ -29,7 +29,6 @@ class App extends Component {
       return (this.calculateFaceBox(ele.region_info.bounding_box))
       
     })
-    // console.log(clarifaiFaces)
     return clarifaiFaces
   } 
 

@@ -7,6 +7,9 @@ const ImageInputForm = ({ onInputChange, onBtnSubmit}) => {
         <p className="f3 white">
           {"Facesense detects faces in your pictures. Feel free to try!"}
         </p>
+        <p className="i white">Copy and paste this image into the form to make it easier: <br/>
+        https://bit.ly/2Kzax6h
+         </p>
 
         <div className="centered">
           <div className="pa-4 br3 centered shadow-5">
@@ -18,7 +21,7 @@ const ImageInputForm = ({ onInputChange, onBtnSubmit}) => {
             />
             <button 
             onClick={onBtnSubmit}
-            className="w-30 grow f4 link ph3 pv2 dib white bg-light-purple">Detect</button>
+            className="grow f4 link ph3 pv2 dib white bg-light-purple">Detect</button>
           </div>
         </div>
       </div>
