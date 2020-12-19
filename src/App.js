@@ -9,7 +9,7 @@ import FaceRecognition from './components/FaceRecognition/FaceRecognition'
 import Clarifai from 'clarifai'
 
 const app = new Clarifai.App({
-  apiKey: ''
+  apiKey: 'e565fc75ab9f4e1fa80c551dec437ff4'
  });
 
 class App extends Component {
@@ -18,9 +18,14 @@ class App extends Component {
     // initialize state
     this.state = {
       input: '',
-      imageUrl: ''
+      imageUrl: '',
+      box: {},
     }
   }
+
+  calculateFaceLocation = (data) => {
+    response.outputs[0].data.regions[0].region_info.bounding_box
+  } 
 
   onInputChange = (event) => {
     this.setState({ input: event.target.value})  // runs this function on each change of the input
@@ -30,17 +35,11 @@ class App extends Component {
     this.setState({imageUrl: this.state.input})
     console.log(this.state)
   
-    app.models.predict(Clarifai.FACE_DETECT_MODEL, this.state.input).then(
-      function(response) {
-        // do something with response
-        response.outputs[0].data.regions.forEach(ele => console.log(ele.region_info.bounding_box))
-        
-      },
-      function(err) {
-        // there was an error
-      }
+    app.models.predict(Clarifai.FACE_DETECT_MODEL, this.state.input)
+      .then(response => this.calculateFaceLocation(response)
+      .catch(err => console.log(err))
     );
-    // console.log('click')
+    
   }
 
   render() {
