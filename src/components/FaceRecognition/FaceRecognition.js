@@ -1,7 +1,7 @@
 import './FaceRecognition.css'
 
 const FaceRecognition = ({imageUrl, boxes}) => {
-console.log(boxes)
+
   return (
     <div className="centered">
     
