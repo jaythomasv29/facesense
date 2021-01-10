@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ImageInputForm = ({ onInputChange, onBtnSubmit}) => {
+const ImageInputForm = ({ onInputChange, onPictureSubmit}) => {
   return (
     <div>
       <div className="shadow-5 pa4  w-70" style={{marginRight: "auto", marginLeft: "auto"}}>
@@ -20,7 +20,7 @@ const ImageInputForm = ({ onInputChange, onBtnSubmit}) => {
 
             />
             <button 
-            onClick={onBtnSubmit}
+            onClick={onPictureSubmit}
             className="grow f4 link ph3 pv2 dib white bg-light-purple">Detect</button>
           </div>
         </div>

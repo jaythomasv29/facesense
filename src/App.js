@@ -2,11 +2,11 @@ import React from 'react'
 import Particles from 'react-particles-js'
 import './App.css';
 import Navigation from './components/Navigation/Navigation'
-// import Logo from './components/Logo/Logo'
+
 import ImageInputForm from './components/ImageInputForm/ImageInputForm'
 import Rank from './components/Rank/Rank'
 import FaceRecognition from './components/FaceRecognition/FaceRecognition'
-// import Login from './components/Login/Login'
+
 import Signin from './components/Signin/Signin'
 import Register from './components/Register/Register'
 import Clarifai from 'clarifai'
@@ -47,12 +47,6 @@ class App extends React.Component {
     })
   }
 
-    // //lifecycle hook to fetch
-  // componentDidMount() {
-  //   fetch('http://localhost:3001/')
-  //   .then(response => response.json())
-  //   .then(console.log)
-  // }
 
   generateFaceLocation = (data) => {
     console.log(data)
@@ -84,15 +78,24 @@ class App extends React.Component {
     this.setState({ input: event.target.value })  // runs this function on each change of the input
   }
 
-  onBtnSubmit = () => {
+  onPictureSubmit = () => {
     this.setState({ imageUrl: this.state.input })
     // console.log(this.state)
 
     app.models.predict(Clarifai.FACE_DETECT_MODEL, this.state.input)
-      .then(response => this.displayFaceBoxes(this.generateFaceLocation(response))
-        .catch(err => console.log(err))
-      );
-
+      .then(response => {
+        if(response) {
+          fetch('http://localhost:3001/image', {
+            method: 'put',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+              id: this.state.user.id
+            })
+          })
+        }
+        this.displayFaceBoxes(this.generateFaceLocation(response))
+      })
+      .catch(err => console.log(err))
   }
 
   onRouteChange = (route) => {
@@ -115,7 +118,7 @@ class App extends React.Component {
         { this.state.route === 'home' 
           ? <div>
             <Rank name={ this.state.user.name } entries={ this.state.user.entries } />
-            <ImageInputForm onInputChange={this.onInputChange} onBtnSubmit={this.onBtnSubmit} />
+            <ImageInputForm onInputChange={this.onInputChange} onPictureSubmit={this.onPictureSubmit} />
           <FaceRecognition boxes={boxes} imageUrl={imageUrl} />
           </div>
           :  (

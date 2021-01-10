@@ -13,15 +13,15 @@ class Register extends React.Component{
   }
 // create onChange events to get value from input and set state
   onEmailChange = (event) => {
-    this.setState({ signInEmail: event.target.value })
+    this.setState({ email: event.target.value })
   }
 
   onPasswordChange = (event) => {
-    this.setState({ signInPassword: event.target.value })
+    this.setState({ password: event.target.value })
   }
 
   onNameChange = (event) => {
-    this.setState({ signInName: event.target.value })
+    this.setState({ name: event.target.value })
   }
 
   onSubmitRegister = () => {
@@ -70,7 +70,7 @@ class Register extends React.Component{
               <div className="mv3">
                 <label className="db white fw6 lh-copy f6" htmlFor="password">Password</label>
                 <input 
-                onChange={this.onNameChange}
+                onChange={this.onPasswordChange}
                 className="b pa2 white input-reset ba b--white-10 bg-transparent b--grey hover-grey w-100" type="password" name="password" id="password" />
               </div>
               
